@@ -5,7 +5,6 @@ export default class UserController{
 
 
     static createUser(req, res){
-        UserModel.connetion();
         const user = {
             name: req.body.name,
             email: req.body.email,
