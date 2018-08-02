@@ -3,3 +3,7 @@ export const dbConfig = {
     port: process.env.DB_PORT,
     db: process.env.DB_NAME
 }
+
+export const secret = {
+    secret: 'super-secret'
+}

@@ -4,14 +4,18 @@ export default class Model {
 
 
     static connect() {
-        this.connection = rethinkdb.connect(dbConfig)
+        return this.connection = rethinkdb.connect({
+            host: 'localhost',
+            port: 28015,
+            db: 'nodeAPI'
+        })
             .then(connection => {
                 return connection;
             })
     }
 
-    static find(tableName, id) {
-        return rethinkdb.table(tableName).get(id).run(this.connection)
+    static async create(tableName, object) {
+        return rethinkdb.table(tableName).insert(object).run(await this.connect())
             .then(result => {
                 return result;
             })
@@ -20,57 +24,65 @@ export default class Model {
             })
     }
 
-    static findAll(tableName) {
-        return rethinkdb.table(tableName).run(this.connection)
-            .then(cursor => {
-                return cursor.toArray();
+    static async findOne(tableName, id) {
+        return rethinkdb.table(tableName).get(id).run(await this.connect())
+            .then(result => {
+                return result;
             })
             .catch(error => {
                 return error;
             })
     }
 
-    static findBy(tableName, fieldName, value) {
-        return rethinkdb.table(tableName).filter(rethinkdb.row(fieldName).eq(value)).run(this.connection)
-            .then(cursor => {
-                return cursor.toArray();
-            })
-            .catch(error => {
-                return error;
-            })
-    }
-
-    static findIndexed(tableName, query, index) {
-        return rethinkdb.table(tableName).getAll(query, { index: index }).run(this.connection)
-            .then(cursor => {
-                return cursor.toArray();
-            })
-            .catch(error => {
-                return error;
-            })
-    }
-
-    static async save(tableName, object) {
-        console.log('1');
+    static async findAll(tableName) {
 
         const result = await this.connect();
-        console.log(this.connection)
-
-        return rethinkdb.table(tableName).insert(object).run(this.connection)
-            .then(result => {
-                return result;
+        return rethinkdb.table(tableName).run(result)
+            .then(cursor => {
+                return cursor.toArray();
             })
             .catch(error => {
                 return error;
             })
     }
 
-    static edit(tableName, id, object) {
-        return rethinkdb.table(tableName).get(id).update(object).run(this.connection)
+    static async findBy(tableName, fieldName, value) {
+        return rethinkdb.table(tableName).filter(rethinkdb.row(fieldName).eq(value)).run( await this.connect())
+            .then(cursor => {
+                return cursor.toArray();
+            })
+            .catch(error => {
+                return error;
+            })
+    }
+
+    static async findIndexed(tableName, query, index) {
+        return rethinkdb.table(tableName).getAll(query, { index: index }).run( await this.connect())
+            .then(cursor => {
+                return cursor.toArray();
+            })
+            .catch(error => {
+                return error;
+            })
+    }
+
+
+    static async update(tableName, id, object) {
+        return rethinkdb.table(tableName).get(id).update(object).run( await this.connect())
             .then(result => {
                 return result
             })
             .catch(error => {
+                return error;
+            })
+    }
+
+    static async delete(tableName, id){
+        return rethinkdb.table(tableName).get(id).delete().run( await this.connect())
+            .then(result=>{
+                return result;
+            })
+            .catch(error=>{
                 return error;
             })
     }
