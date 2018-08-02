@@ -1,6 +1,5 @@
 import express from 'express';
 import rethinkdb from 'rethinkdb';
-import dbConfig from './database';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -12,4 +11,14 @@ import jwt from 'jsonwebtoken';
 import moment from 'moment';
 const app = express();
 
-export {app, express, rethinkdb, dbConfig, logger, bodyParser, cors, helmet, dotenv, bycrypt, bluebird, jwt, moment};
+const dbConfig = {
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    db: process.env.DB_NAME
+}
+
+const secret = {
+    key: 'super-secret'
+}
+
+export {app, express, rethinkdb, dbConfig, logger, bodyParser, cors, helmet, dotenv, bycrypt, bluebird, jwt, moment, secret};

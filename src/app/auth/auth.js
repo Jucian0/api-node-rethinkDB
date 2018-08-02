@@ -1,14 +1,15 @@
 import Token from "./token";
-import { resolve } from "url";
 import { bycrypt } from "../../config/consts";
-//import Promise from 'bluebird';
-
 
 export default class Auth{
 
     static authorize(req, res, next){
         let apiToken = req.headers['x-api-token'];
-        Token.verify(apiToken, next);
+        Token.verify(apiToken, next)
+            .then(error=>{
+                console.log(error)
+                return res.status(error.status).send(error);
+            })
         next();
     }
 

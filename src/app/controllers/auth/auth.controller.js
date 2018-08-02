@@ -11,6 +11,7 @@ export default class AuthController {
 
                 if (!user) {
                     return res.status(404).send({
+                        status: 404,
                         message: 'User not found'
                     })
                 };
@@ -26,6 +27,7 @@ export default class AuthController {
                             res.status(200).send(currentUser);
                         } else {
                             return res.status(401).send({
+                                status: 401,
                                 message: 'Authentication failed'
                             })
                         }

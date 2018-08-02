@@ -1,27 +1,34 @@
-import { moment, jwt } from "../../config/consts";
-import { secret } from "../../config/database";
+import { moment, jwt, secret } from "../../config/consts";
+import { resolve } from "dns";
 
-export default class Token{
+export default class Token {
 
 
-    static generate(user){
-        return jwt.sign({id: user.id}, secret,{
+    static generate(user) {
+        return jwt.sign({ id: user.id }, secret.key, {
             expiresIn: 86400
         })
     }
 
-    static verify(token, next){
-        if(!token){
-            let notFoundError = new Error('Token not found');
-            notFoundError.status = 404;
-            return next(notFoundError);
-        };
+    static verify(token, next) {
+        let resultVerify;
+        if (!token) {
+            resultVerify = {
+                status: 404,
+                message: 'Token not found'
+            }
+        } else if (jwt.decode(token, secret.key) <= moment().format('x')) {
+            resultVerify = {
+                status: 401,
+                message: 'Token has expired'
+            }
+        } else {
+            resultVerify = null;
+        }
 
-        if(jwt.decode(token, secret) <= moment().format('x')){
-            let expiredError = new Error('Token has expired');
-            expiredError.status = 401;
-            return next(expiredError);
-        };
+        return new Promise(resolve => {
+            resolve(resultVerify)
+        })
     }
 
 }
