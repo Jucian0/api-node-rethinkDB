@@ -15,10 +15,10 @@ const dbConfig = {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     db: process.env.DB_NAME
-}
+};
 
 const secret = {
     key: 'super-secret'
-}
+};
 
 export {app, express, rethinkdb, dbConfig, logger, bodyParser, cors, helmet, dotenv, bycrypt, bluebird, jwt, moment, secret};

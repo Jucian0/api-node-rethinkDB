@@ -2,7 +2,6 @@ import { rethinkdb, dbConfig } from "../../config/consts";
 
 export default class Model {
 
-
     static connect() {
         return this.connection = rethinkdb.connect({
             host: 'localhost',

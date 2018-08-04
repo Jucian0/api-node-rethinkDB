@@ -1,5 +1,5 @@
 import {app, logger, bodyParser, cors, helmet} from './config/consts';
-import mainRoutes from './routes/routes';
+import mainRoutes from './app/routes/routes';
 import "babel-core/register";
 import "babel-polyfill";
 
