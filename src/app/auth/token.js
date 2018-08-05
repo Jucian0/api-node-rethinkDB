@@ -1,5 +1,4 @@
 import { moment, jwt, secret } from "../../config/consts";
-import { resolve } from "dns";
 
 export default class Token {
 

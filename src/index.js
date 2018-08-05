@@ -3,6 +3,7 @@ import mainRoutes from './app/routes/routes';
 import "babel-core/register";
 import "babel-polyfill";
 
+import expressValidation from 'express-validation';
 
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
