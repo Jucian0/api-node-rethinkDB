@@ -8,7 +8,7 @@
     "build": "babel src/ -d dist/",
     "serve": "babel -w src/ -d dist/ | nodemon --watch dist"
   },
-  "author": "Maciej Sikora hello@maciejsikora.com",
+  "author": "Juciano juciano@outlook.com.br",
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "^6.26.0",
