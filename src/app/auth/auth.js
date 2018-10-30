@@ -7,7 +7,6 @@ export default class Auth{
         let apiToken = req.headers['x-api-token'];
         Token.verify(apiToken, next)
             .then(error=>{
-                console.log(error)
                 return res.status(error.status).send(error);
             })
         next();

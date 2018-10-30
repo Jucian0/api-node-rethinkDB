@@ -6,26 +6,25 @@ export default class UserController {
 
 
     static createUser(req, res) {
-
-        for(let key in req.body){
-            if(req.body[key] == undefined){
-                return res.status(500).send({
-                    status: 500,
-                    message: `This field ${key.toUpperCase()} is required`
-                });
-            };
-        };
         Auth.hashPassword(req.body.password)
             .then((hash) => {
                 const user = {
                     name: req.body.name,
                     email: req.body.email,
-                    password: hash
+                    password: hash,
+                    location: req.body.location,
+                    distance: req.body.distance 
                 }
                 UserModel.create('users', user)
                     .then(result => {
                         res.status(200).send(result);
                     })
+                    .catch(error => {
+                        res.status(500).send({
+                            status: 500,
+                            message: error.message || 'Some error ocured while creating the user.'
+                        });
+                    });
             });
     }
 
@@ -35,7 +34,10 @@ export default class UserController {
                 res.status(200).send(user);
             })
             .catch(error => {
-                console.log(error)
+                res.status(404).send({
+                    status:404,
+                    message: `User not found with id ${req.params.userId}`
+                });
             });
     }
 
@@ -44,6 +46,12 @@ export default class UserController {
             .then(users => {
                 res.status(200).send(users);
             })
+            .catch(error=>{
+                res.status(500).send({
+                    status:500,
+                    message: error.message || 'Some error ocurred while retrieving users.'
+                });
+            });
     }
 
     static findUserBy(req, res) {
@@ -51,18 +59,35 @@ export default class UserController {
             .then(user => {
                 res.status(200).send(user);
             })
+            .catch(error=>{
+                res.status(500).send({
+                    status: 500,
+                    message: error.message || 'Some error ocurred while retrieving users.'
+                });
+            });
     }
 
     static updateUser(req, res) {
-        const user = {
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password
-        }
-        UserModel.update('users', req.params.userId, user)
-            .then(result => {
-                res.status(200).send(result);
-            })
+        Auth.hashPassword(req.body.password)
+        .then((hash) => {
+            const user = {
+                name: req.body.name,
+                email: req.body.email,
+                password: hash,
+                location: req.body.location,
+                distance: req.body.distance 
+            }
+            UserModel.update('users', req.params.userId, user)
+                .then(result => {
+                    res.status(200).send(result);
+                })
+                .catch(error => {
+                    res.status(500).send({
+                        status:500,
+                        message: error.message || 'Some error ocured while updating the user.'
+                    });
+                });
+        });
     }
 
     static deleteUser(req, res) {
@@ -71,6 +96,10 @@ export default class UserController {
                 res.status(200).send(result);
             })
             .catch(error => {
+                res.status(500).send({
+                    status:500,
+                    message: error.message || 'Some error ocured while updating the user.'
+                });
             });
     }
 

@@ -3,11 +3,7 @@ import { rethinkdb, dbConfig } from "../../config/consts";
 export default class Model {
 
     static connect() {
-        return this.connection = rethinkdb.connect({
-            host: 'localhost',
-            port: 28015,
-            db: 'nodeAPI'
-        })
+        return this.connection = rethinkdb.connect(dbConfig)
             .then(connection => {
                 return connection;
             })
@@ -34,7 +30,6 @@ export default class Model {
     }
 
     static async findAll(tableName) {
-
         const result = await this.connect();
         return rethinkdb.table(tableName).run(result)
             .then(cursor => {
@@ -64,7 +59,6 @@ export default class Model {
                 return error;
             })
     }
-
 
     static async update(tableName, id, object) {
         return rethinkdb.table(tableName).get(id).update(object).run( await this.connect())

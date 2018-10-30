@@ -3,7 +3,6 @@ import mainRoutes from './app/routes/routes';
 import "babel-core/register";
 import "babel-polyfill";
 
-
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());

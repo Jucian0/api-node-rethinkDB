@@ -1,52 +1,36 @@
-2018-08-02T16:41:19.544482000 1.106186s notice: Recursively removing directory /Users/juciano/Documents/node/node-express-babel-boilerplate-master/rethinkdb_data/tmp
-2018-08-02T16:41:19.547848000 1.109556s notice: Initializing directory /Users/juciano/Documents/node/node-express-babel-boilerplate-master/rethinkdb_data
-2018-08-02T16:41:19.547991000 1.109694s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/juciano/Documents/node/node-express-babel-boilerplate-master/rethinkdb_data' did not already exist or is empty.)
-2018-08-02T16:41:19.548397000 1.110100s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
-2018-08-02T16:41:19.553575000 1.115279s notice: Running on Darwin 17.0.0 x86_64
-2018-08-02T16:41:19.553656000 1.115359s notice: Loading data from directory /Users/juciano/Documents/node/node-express-babel-boilerplate-master/rethinkdb_data
-2018-08-02T16:41:19.691426000 1.253129s info: Automatically using cache size of 1129 MB
-2018-08-02T16:41:19.695622000 1.257325s notice: Listening for intracluster connections on port 29015
-2018-08-02T16:41:19.699639000 1.261342s notice: Listening for client driver connections on port 28015
-2018-08-02T16:41:19.699897000 1.261600s notice: Listening for administrative HTTP connections on port 8080
-2018-08-02T16:41:19.701528000 1.263231s notice: Listening on cluster addresses: 127.0.0.1, 192.168.15.10, ::1, fe80::1%1, fe80::140e:26e2:ceb6:4892%6, fe80::6f66:72ca:e64c:6bee%7
-2018-08-02T16:41:19.703621000 1.265324s notice: Listening on driver addresses: 127.0.0.1, 192.168.15.10, ::1, fe80::1%1, fe80::140e:26e2:ceb6:4892%6, fe80::6f66:72ca:e64c:6bee%7
-2018-08-02T16:41:19.705024000 1.266727s notice: Listening on http addresses: 127.0.0.1, 192.168.15.10, ::1, fe80::1%1, fe80::140e:26e2:ceb6:4892%6, fe80::6f66:72ca:e64c:6bee%7
-2018-08-02T16:41:19.705030000 1.266732s notice: Server ready, "iMac_de_Juciano_roc" 7997c408-edfc-4826-864f-1343f5db12ff
-2018-08-02T17:03:37.026433000 1338.587706s info: Table 9f93ee5f-2bb2-441f-8d87-5a458511637e: Starting a new Raft election for term 1.
-2018-08-02T17:03:37.027816000 1338.589089s info: Table 9f93ee5f-2bb2-441f-8d87-5a458511637e: Added replica on this server.
-2018-08-02T17:03:37.062795000 1338.624068s info: Table 9f93ee5f-2bb2-441f-8d87-5a458511637e: This server is Raft leader for term 1. Latest log index is 0.
-2018-08-02T17:58:18.793501000 4620.336462s notice: Server got SIGINT from pid 355, uid 501; shutting down...
-2018-08-02T17:58:18.793624000 4620.336585s notice: Shutting down client connections...
-2018-08-02T17:58:18.796090000 4620.339052s notice: All client connections closed.
-2018-08-02T17:58:18.796114000 4620.339074s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2018-08-02T17:58:18.810231000 4620.353192s notice: Storage engine shut down.
-2018-08-02T22:46:37.986597000 0.247906s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
-2018-08-02T22:46:38.013892000 0.275198s notice: Running on Darwin 17.0.0 x86_64
-2018-08-02T22:46:38.013989000 0.275295s notice: Loading data from directory /Users/juciano/Documents/node/node-express-babel-boilerplate-master/rethinkdb_data
-2018-08-02T22:46:38.086536000 0.347841s info: Automatically using cache size of 100 MB
-2018-08-02T22:46:38.086550000 0.347855s warn: Cache size does not leave much memory for server and query overhead (available memory: 442 MB).
-2018-08-02T22:46:38.086557000 0.347862s warn: Cache size is very low and may impact performance.
-2018-08-02T22:46:38.094854000 0.356159s notice: Listening for intracluster connections on port 29015
-2018-08-02T22:46:38.125554000 0.386859s notice: Listening for client driver connections on port 28015
-2018-08-02T22:46:38.126028000 0.387333s notice: Listening for administrative HTTP connections on port 8080
-2018-08-02T22:46:38.127726000 0.389031s notice: Listening on cluster addresses: 127.0.0.1, 192.168.15.10, ::1, fe80::1%1, fe80::140e:26e2:ceb6:4892%6, fe80::6f66:72ca:e64c:6bee%7
-2018-08-02T22:46:38.129668000 0.390973s notice: Listening on driver addresses: 127.0.0.1, 192.168.15.10, ::1, fe80::1%1, fe80::140e:26e2:ceb6:4892%6, fe80::6f66:72ca:e64c:6bee%7
-2018-08-02T22:46:38.130970000 0.392275s notice: Listening on http addresses: 127.0.0.1, 192.168.15.10, ::1, fe80::1%1, fe80::140e:26e2:ceb6:4892%6, fe80::6f66:72ca:e64c:6bee%7
-2018-08-02T22:46:38.130975000 0.392279s notice: Server ready, "iMac_de_Juciano_roc" 7997c408-edfc-4826-864f-1343f5db12ff
-2018-08-02T22:46:39.691701000 1.953003s info: Table 9f93ee5f-2bb2-441f-8d87-5a458511637e: Starting a new Raft election for term 2.
-2018-08-02T22:46:39.747266000 2.008568s info: Table 9f93ee5f-2bb2-441f-8d87-5a458511637e: This server is Raft leader for term 2. Latest log index is 2.
-2018-08-03T16:53:58.941212000 0.151253s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
-2018-08-03T16:53:58.963383000 0.173418s notice: Running on Darwin 17.0.0 x86_64
-2018-08-03T16:53:58.963479000 0.173513s notice: Loading data from directory /Users/juciano/Documents/node/node-express-babel-boilerplate-master/rethinkdb_data
-2018-08-03T16:53:59.020980000 0.231015s info: Automatically using cache size of 100 MB
-2018-08-03T16:53:59.021001000 0.231036s warn: Cache size does not leave much memory for server and query overhead (available memory: 764 MB).
-2018-08-03T16:53:59.021011000 0.231045s warn: Cache size is very low and may impact performance.
-2018-08-03T16:53:59.027466000 0.237500s notice: Listening for intracluster connections on port 29015
-2018-08-03T16:53:59.062020000 0.272054s notice: Listening for client driver connections on port 28015
-2018-08-03T16:53:59.062254000 0.272289s notice: Listening for administrative HTTP connections on port 8080
-2018-08-03T16:53:59.064511000 0.274545s notice: Listening on cluster addresses: 127.0.0.1, 192.168.15.10, ::1, fe80::1%1, fe80::18b2:6672:b665:f509%6, fe80::5955:d15:aa18:8849%7
-2018-08-03T16:53:59.066796000 0.276831s notice: Listening on driver addresses: 127.0.0.1, 192.168.15.10, ::1, fe80::1%1, fe80::18b2:6672:b665:f509%6, fe80::5955:d15:aa18:8849%7
-2018-08-03T16:53:59.068928000 0.278962s notice: Listening on http addresses: 127.0.0.1, 192.168.15.10, ::1, fe80::1%1, fe80::18b2:6672:b665:f509%6, fe80::5955:d15:aa18:8849%7
-2018-08-03T16:53:59.068935000 0.278969s notice: Server ready, "iMac_de_Juciano_roc" 7997c408-edfc-4826-864f-1343f5db12ff
-2018-08-03T16:54:00.758927000 1.968962s info: Table 9f93ee5f-2bb2-441f-8d87-5a458511637e: Starting a new Raft election for term 3.
-2018-08-03T16:54:00.783449000 1.993484s info: Table 9f93ee5f-2bb2-441f-8d87-5a458511637e: This server is Raft leader for term 3. Latest log index is 5.
+2018-10-17T19:20:27.026862000 0.052527s notice: Recursively removing directory /Users/juciano/Documents/Projetos/node/api-node-express/rethinkdb_data/tmp
+2018-10-17T19:20:27.029376000 0.055043s notice: Initializing directory /Users/juciano/Documents/Projetos/node/api-node-express/rethinkdb_data
+2018-10-17T19:20:27.030209000 0.055871s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/juciano/Documents/Projetos/node/api-node-express/rethinkdb_data' did not already exist or is empty.)
+2018-10-17T19:20:27.030862000 0.056524s notice: Running rethinkdb 2.3.6 (CLANG 10.0.0 (clang-1000.10.43.1))...
+2018-10-17T19:20:27.045158000 0.070821s notice: Running on Darwin 18.0.0 x86_64
+2018-10-17T19:20:27.045232000 0.070893s notice: Loading data from directory /Users/juciano/Documents/Projetos/node/api-node-express/rethinkdb_data
+2018-10-17T19:20:27.174962000 0.200623s info: Automatically using cache size of 100 MB
+2018-10-17T19:20:27.174975000 0.200636s warn: Cache size does not leave much memory for server and query overhead (available memory: 706 MB).
+2018-10-17T19:20:27.174983000 0.200643s warn: Cache size is very low and may impact performance.
+2018-10-17T19:20:27.176284000 0.201945s notice: Listening for intracluster connections on port 29015
+2018-10-17T19:20:27.178734000 0.204395s notice: Listening for client driver connections on port 28015
+2018-10-17T19:20:27.178907000 0.204568s notice: Listening for administrative HTTP connections on port 8080
+2018-10-17T19:20:27.178911000 0.204572s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-10-17T19:20:27.178921000 0.204582s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-10-17T19:20:27.178924000 0.204585s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-10-17T19:20:27.178931000 0.204592s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-10-17T19:20:27.178966000 0.204627s notice: Server ready, "Pro_de_Juciano_267" 8e19e4a6-9e30-42a5-8f5e-e63035bbce24
+2018-10-17T19:29:00.319214000 513.334649s info: Table cd049ad7-1777-40ed-b561-6b15b55e10ab: Starting a new Raft election for term 1.
+2018-10-17T19:29:00.322849000 513.338285s info: Table cd049ad7-1777-40ed-b561-6b15b55e10ab: Added replica on this server.
+2018-10-17T19:29:00.344339000 513.359775s info: Table cd049ad7-1777-40ed-b561-6b15b55e10ab: This server is Raft leader for term 1. Latest log index is 0.
+2018-10-18T14:12:34.480980000 1.196139s notice: Running rethinkdb 2.3.6 (CLANG 10.0.0 (clang-1000.10.43.1))...
+2018-10-18T14:12:34.497106000 1.212263s notice: Running on Darwin 18.0.0 x86_64
+2018-10-18T14:12:34.497315000 1.212471s notice: Loading data from directory /Users/juciano/Documents/Projetos/node/api-node-express/rethinkdb_data
+2018-10-18T14:12:34.542115000 1.257271s info: Automatically using cache size of 100 MB
+2018-10-18T14:12:34.542136000 1.257291s warn: Cache size does not leave much memory for server and query overhead (available memory: 893 MB).
+2018-10-18T14:12:34.542149000 1.257304s warn: Cache size is very low and may impact performance.
+2018-10-18T14:12:34.543755000 1.258911s notice: Listening for intracluster connections on port 29015
+2018-10-18T14:12:34.570125000 1.285280s notice: Listening for client driver connections on port 28015
+2018-10-18T14:12:34.570514000 1.285670s notice: Listening for administrative HTTP connections on port 8080
+2018-10-18T14:12:34.570519000 1.285674s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-10-18T14:12:34.570523000 1.285678s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-10-18T14:12:34.570526000 1.285682s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-10-18T14:12:34.570546000 1.285702s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-10-18T14:12:34.570552000 1.285708s notice: Server ready, "Pro_de_Juciano_267" 8e19e4a6-9e30-42a5-8f5e-e63035bbce24
+2018-10-18T14:12:36.536872000 3.252028s info: Table cd049ad7-1777-40ed-b561-6b15b55e10ab: Starting a new Raft election for term 2.
+2018-10-18T14:12:36.555017000 3.270173s info: Table cd049ad7-1777-40ed-b561-6b15b55e10ab: This server is Raft leader for term 2. Latest log index is 2.
